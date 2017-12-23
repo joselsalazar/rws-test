@@ -12,6 +12,9 @@
     "url": "git+https://github.com/joselsalazar/rws-test.git"
   },
   "author": "Jose L Salazar",
+  "dependencies": {
+    "express": "^4.14.0",
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/joselsalazar/rws-test/issues"
