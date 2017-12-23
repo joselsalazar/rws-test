@@ -14,6 +14,8 @@ function onResponse(response)
 		storedPasswords.push(response.credentials[i].password);
 		storedAltPass.push(response.credentials[i].password2);
 	}
+
+	console.log(response);
 }
 
 // Cycles on Attempts
@@ -44,7 +46,7 @@ function success(username, str) {
 }
 
 // Pull Values From Form
-$('#submit').click(function() {
+$('#log-in').on('submit', function () {
 	event.preventDefault();
 
 	let usernameInput = $('#username').val().trim();
@@ -70,11 +72,11 @@ $('#submit').click(function() {
 				console.log("Success! But you need a PW!");
 				success(usernameInput, "You really need to set up a Password. SECURITY BRO!");
 			} else {
-				$("#warning").html(`FAILURE! PASSWORD IS WRONG LOSER! ${e} ATTEMPTS REMAINING!`);
+				$("#warning").html(`FAILURE! PASSWORD IS WRONG! ${e} ATTEMPTS REMAINING!`);
 				fail();
 			}
 		} else {
-			$("#warning").html(`FAILURE! PASSWORD IS WRONG LOSER! ${e} ATTEMPTS REMAINING!`);
+			$("#warning").html(`FAILURE! USERNAME IS WRONG! ${e} ATTEMPTS REMAINING!`);
 			fail();
 		}
 	}
